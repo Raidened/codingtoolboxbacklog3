@@ -1,100 +1,23 @@
-# 🚀 Coding Tool Box – Guide d'installation
+# Toutes les story du backlog numéro 3 ont été réalisées.
 
-Bienvenue dans **Coding Tool Box**, un outil complet de gestion pédagogique conçu pour la Coding Factory.  
-Ce projet Laravel inclut la gestion des groupes, promotions, étudiants, rétro (Kanban), QCM  dynamiques, et bien plus.
 
----
+# Gestion des événements en temps réel :
 
-## 📦 Prérequis
+Comprendre et configurer Pusher.js a pris plus de temps que prévu. J'ai eu besoin de demander de l'aide pour être guidé sur cette partie puis j'ai fini par y arriver tant bien que mal.
+Difficulté à synchroniser les événements entre plusieurs utilisateurs.
 
-Assurez-vous d’avoir les éléments suivants installés sur votre machine :
+# Manque de clarté dans les priorités :
 
-- PHP ≥ 8.1
-- Composer
-- MySQL ou MariaDB
-- Node.js + npm (pour les assets frontend si nécessaire)
-- Laravel CLI (`composer global require laravel/installer`)
+Le backlog 2 a été commencé, mais j'ai changé de direction pour me concentrer sur le backlog 3.
+Ce changement a causé une perte de temps significative.
 
----
+# Problèmes de gestion de temps :
 
-## ⚙️ Installation du projet
+Du fait de mon blocage sur une story du backlog 2 j'ai eu tendance a beaucoup retarder l'échéance et donc a procrastiner, ce qui a motivé mon choix de changement de backlog (fortement tardif).
 
-Exécutez les étapes ci-dessous pour lancer le projet en local :
+Concernant le git, je ne suis pas satisfait de mes commit et de ma façon de faire (absence de branche feat/ fix/ etc) je l'ai donc recommencé aujourd'hui mais je ne le trouve pas mieux pour autant, je comprendrais que la notation soit assez sévère là dessus je m'y suis très mal pris.
 
-### 1. Cloner le dépôt
+Le basculement tardif sur le backlog 3 (3 jours avant la fin) a empêché de finaliser certaines fonctionnalités.
 
-```bash
-git clone https://m_thibaud@bitbucket.org/m_thibaud/projet-web-2025.git
-cd coding-tool-box
-cp .env.example .env
-```
+En fin de compte, j'ai très mal géré mes tâches et mon temps sur ces deux semaines, ce qui fait que je ne suis pas satisfait de mon travail. 
 
-### 2. Configuration de l'environnement
-
-```bash
-✍️ Ouvrez le fichier .env et configurez les paramètres liés à votre base de données :
-
-DB_DATABASE=nom_de_votre_bdd
-DB_USERNAME=utilisateur
-DB_PASSWORD=motdepasse
-```
-
-### 3. Installation des dépendances PHP
-
-```bash
-composer install
-```
-
-### 4. Nettoyage et optimisation du cache
-
-```bash
-php artisan optimize:clear
-```
-
-### 5. Génération de la clé d'application
-
-```bash
-php artisan key:generate
-```
-
-### 6. Migration de la base de données
-
-```bash
-php artisan migrate
-```
-
-### 7. Population de la base (Données de test)
-
-```bash
-php artisan db:seed
-```
-
----
-
-## 💻 Compilation des assets (si nécessaire)
-
-```bash
-npm install
-npm run dev
-```
-
----
-
-## 👤 Comptes de test disponibles
-
-| Rôle       | Email                         | Mot de passe |
-|------------|-------------------------------|--------------|
-| **Admin**  | admin@codingfactory.com       | 123456       |
-| Enseignant | teacher@codingfactory.com     | 123456       |
-| Étudiant   | student@codingfactory.com     | 123456       |
-
----
-
-## 🚧 Fonctionnalités principales
-
-- 🔧 Gestion des groupes, promotions, étudiants
-- 📅 Vie commune avec système de pointage
-- 📊 Bilans semestriels étudiants via QCM générés par IA
-- 🧠 Génération automatique de QCM par langage sélectionné
-- ✅ Système de Kanban pour les rétrospectives
-- 📈 Statistiques d’usage et suivi pédagogique
