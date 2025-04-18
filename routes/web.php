@@ -11,7 +11,6 @@ use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Middleware\EnsureUserIsTeacherOrAdmin;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeacherController;
 
 // Redirect the root path to /dashboard
 Route::redirect('/', 'dashboard');
@@ -59,6 +58,7 @@ Route::middleware('auth')->group(function () {
         Route::get('retros', [RetroController::class, 'index'])->name('retro.index');
         Route::post('retros/columns/{column}/items', [RetroController::class, 'addItem'])->name('retro.column.addItem');
         Route::delete('retros/items/{item}', [RetroController::class, 'removeItem'])->name('retro.item.remove');
+        Route::patch('retros/items/{item}', [RetroController::class, 'moveItem'])->name('retro.item.move');
         
         // Routes accessibles uniquement aux enseignants et administrateurs
         Route::middleware(EnsureUserIsTeacherOrAdmin::class)->group(function () {

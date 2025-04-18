@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <meta content="follow, index" name="robots"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta content="" name="description"/>
     <link href="{{ asset('media/icon.png') }}" rel="shortcut icon"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>

@@ -58,14 +58,14 @@ class AIHomogeneousGroupService
                         'text' => "OBJECTIF: Créer des groupes d'étudiants équilibrés où chaque groupe aura une moyenne de compétences similaire.
 
 INSTRUCTIONS:
-1. Répartis TOUS les étudiants de la liste en groupes de $maxStudentsPerGroup membres maximum.
-2. Aucun étudiant ne doit être oublié ou laissé de côté. VÉRIFIE que le nombre total d'étudiants dans les groupes retournés correspond au nombre total d'étudiants fournis.
-3. Les groupes doivent être les plus homogènes possibles (moyenne de compétences similaire entre tous les groupes).
-4. Évite les groupes incomplets quand c'est possible (préfère des groupes complets).
-5. CRITICAL: Si le nombre total d'étudiants ($studentsCount) n'est pas un multiple exact de $maxStudentsPerGroup, TU DOIS absolument assigner TOUS les étudiants. Crée des groupes de $maxStudentsPerGroup et place le ou les étudiants restants soit dans un groupe plus petit séparé, soit en les ajoutant à des groupes existants (créant des groupes de taille $maxStudentsPerGroup + 1), tout en maintenant l'homogénéité. NE LAISSE AUCUN ÉTUDIANT SANS GROUPE.
-6. Si possible, utilise l'historique des groupes pour éviter de mettre ensemble des étudiants qui ont déjà travaillé ensemble.
-7. VÉRIFICATION FINALE: Avant de retourner le JSON, recompte les étudiants dans tous les groupes générés et assure-toi que le total est égal à $studentsCount.
-8. AVANT DE RETOURNER, valide que :
+1. Répartis TOUS les étudiants de la liste en groupes contenant au maximum $maxStudentsPerGroup membres.
+2. Aucun étudiant ne doit être exclu ou laissé de côté. ASSURE-TOI que le nombre total d'étudiants répartis dans les groupes correspond exactement au nombre total d'étudiants fournis.
+3. Les groupes doivent être aussi homogènes que possible en termes de moyenne des compétences.
+4. Privilégie des groupes complets autant que possible, en minimisant les groupes incomplets.
+5. IMPORTANT : Si le nombre total d'étudiants ($studentsCount) n'est pas un multiple exact de $maxStudentsPerGroup, INCLUS TOUS les étudiants. Forme des groupes de $maxStudentsPerGroup et répartis les étudiants restants soit dans un groupe plus petit, soit en les ajoutant à des groupes existants (créant des groupes de taille $maxStudentsPerGroup + 1), tout en maintenant l'homogénéité. NE LAISSE AUCUN ÉTUDIANT SANS GROUPE.
+6. Si applicable, prends en compte l'historique des groupes pour éviter de regrouper des étudiants ayant déjà travaillé ensemble.
+7. VÉRIFICATION FINALE : Avant de retourner le JSON, vérifie que le total des étudiants dans tous les groupes générés correspond à $studentsCount.
+8. AVANT DE RETOURNER, assure-toi que :
     - La sortie est un JSON valide.
     - Chaque ID étudiant fourni apparaît exactement une fois.
     - Si la validation échoue, retourne exactement : {\"error\": \"validation_failed\", \"missing_ids\": [...liste des IDs manquants...]}
